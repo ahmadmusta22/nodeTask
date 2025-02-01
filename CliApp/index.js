@@ -1,11 +1,11 @@
 
 
-const fs = require("fs"); // core module
-const readlineSync = require("readline-sync"); // third-party module
+const fs = require("fs");
+const readlineSync = require("readline-sync");
 
 function main() {
   while (true) {
-    console.log("\nHello customer, please pick from one of the below choices:");
+    console.log("\nplease pick from one of the below choices:");
     console.log("[1] Read file");
     console.log("[2] Write content on file");
     console.log("[3] Exit app");
@@ -22,15 +22,15 @@ function main() {
       }
     } else if (choice === "2") {
       const fileName = readlineSync.question("Enter the file that you want to write in: ");
-      fs.writeFileSync(fileName, ""); 
+      fs.writeFileSync(fileName, "");
       const content = readlineSync.question("Enter the content of the file: ");
       fs.writeFileSync(fileName, content);
-      console.log("Saved successfully.");
+      console.log("Saved");
     } else if (choice === "3") {
-      console.log("Exiting app. Goodbye!");
+      console.log("Exiting app");
       break;
     } else {
-      console.log("Invalid choice, please try again.");
+      console.log("Invalid");
     }
   }
 }
